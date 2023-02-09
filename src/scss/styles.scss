@@ -1,6 +1,16 @@
-body {
-  background: peru;
-  a {
-    color: blue;
+@import "_mixins";
+@import "node_modules/bourbon/core/bourbon";
+
+h2 {
+  color: black;
+  @include responsive("iphone"){
+    color: yellowgreen;
+    background-color: shade(gray, 20%);
+  };
+  @include responsive("iphone-l"){
+    font-size: 40px;
   }
 }
+
+
+

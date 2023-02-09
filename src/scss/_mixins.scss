@@ -1,0 +1,35 @@
+$minIphone: 375px;
+$maxIphone: 812px;
+$minTablet: $minIphone +1;
+$maxTablet: 1120px;
+
+@mixin link($word) {
+    text-decoration: none;
+    display: block;
+    @if $word == 'odd' {
+        color: red;
+    } @else {
+        color: lightcoral;
+    }
+    margin-bottom: 10px;
+}
+
+@mixin responsive($device) {
+    @if $device == 'iphone' {
+        @media screen and (min-width: $minIphone) and (max-width: $maxIphone){
+            @content;
+        }
+    } @else if $device == 'tablet' {
+        @media screen and (min-width: $minTablet) and (max-width: $maxTablet){
+            @content;
+        }
+    } @else if $device == 'iphone-l' {
+        @media screen and (min-width: $minIphone) and (max-width: $maxIphone) and (orientation: landscape) {
+            @content;
+        }
+    } @else if $device == 'ipad-l' {
+        @media screen and (min-width: $minTablet) and (max-width: $maxTablet) and (orientation: landscape) {
+            @content;
+        }
+    }
+}

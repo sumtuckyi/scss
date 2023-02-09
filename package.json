@@ -2,7 +2,8 @@
   "name": "scss-boilerplate",
   "version": "1.0.0",
   "scripts": {
-    "dev": "gulp dev"
+    "dev": "gulp dev",
+    "sass": "node-sass --include-path node_modules/bourbon/app/assets/stylesheets -o build/css/ scss/"
   },
   "type": "module",
   "license": "MIT",
@@ -18,6 +19,7 @@
     "node-sass": "^7.0.1"
   },
   "dependencies": {
+    "bourbon": "^7.3.0",
     "sass": "^1.54.0"
   }
 }
